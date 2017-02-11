@@ -47,6 +47,12 @@ export const addProduction = addPlugin(
   })
 )
 
+export const addMinJs = R.evolve({
+  output: {
+    filename: R.replace('.js', '.min.js')
+  }
+})
+
 // https://webpack.github.io/docs/list-of-plugins.html#uglifyjsplugin
 export const addMinify = R.pipe(
   addPlugin(new webpack.optimize.UglifyJsPlugin()),
@@ -59,11 +65,7 @@ export const addMinify = R.pipe(
       }
     })
   ),
-  R.evolve({
-    output: {
-      filename: R.replace('.js', '.min.js')
-    }
-  })
+  addMinJs
 )
 
 export const addAlias = (from, to) => R.evolve({
