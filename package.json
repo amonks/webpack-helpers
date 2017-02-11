@@ -1,7 +1,7 @@
 {
   "name": "@amonks/webpack-helpers",
   "private": false,
-  "version": "1.0.1",
+  "version": "1.1.0",
   "author": "Andrew J. Monks <a@monks.co>",
   "license": "ISC",
   "files": [
