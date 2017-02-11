@@ -19,6 +19,11 @@
   },
   "dependencies": {
     "babel-runtime": "^6.22.0",
-    "transform-runtime": "^0.0.0"
+    "progress-bar-webpack-plugin": "^1.9.3",
+    "ramda": "^0.23.0",
+    "transform-runtime": "^0.0.0",
+    "webpack": "^2.2.1",
+    "webpack-dashboard": "^0.3.0",
+    "webpack-make-rule": "^1.1.1"
   }
 }
