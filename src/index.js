@@ -81,6 +81,8 @@ export const addName = (() => {
   )
 })()
 
+export const addGlobal = name => R.assocPath(['externals', name], name)
+
 export const addExtern = (name, umdName) => R.assocPath(
   ['externals', name],
   {
