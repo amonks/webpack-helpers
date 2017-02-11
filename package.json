@@ -8,15 +8,25 @@
     "lib"
   ],
   "scripts": {
-    "postversion": "yarn build",
+    "lint": "standard | snazzy",
+    "pretest": "yarn build",
+    "depcheck": "depcheck --specials babel --ignores standard,snazzy,depcheck,babel-eslint,babel-cli,ava",
+    "test": "yarn lint && yarn depcheck && ava --verbose",
     "build": "babel src -d lib"
   },
   "main": "lib/index.js",
   "devDependencies": {
+    "ava": "^0.18.1",
     "babel-cli": "^6.22.2",
+    "babel-eslint": "^7.1.1",
     "babel-plugin-transform-runtime": "^6.22.0",
     "babel-preset-latest": "^6.22.0",
-    "babel-preset-stage-1": "^6.22.0"
+    "babel-preset-stage-1": "^6.22.0",
+    "deepmerge": "^1.3.2",
+    "depcheck": "^0.6.7",
+    "node-uuid": "^1.4.7",
+    "snazzy": "^6.0.0",
+    "standard": "^8.6.0"
   },
   "dependencies": {
     "babel-runtime": "^6.22.0",
@@ -26,5 +36,11 @@
     "webpack": "^2.2.1",
     "webpack-dashboard": "^0.3.0",
     "webpack-make-rule": "^1.1.1"
+  },
+  "ava": {
+    "babel": "inherit",
+    "require": [
+      "babel-register"
+    ]
   }
 }
