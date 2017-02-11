@@ -8,6 +8,7 @@
     "lib"
   ],
   "scripts": {
+    "postversion": "yarn build",
     "build": "babel src -d lib"
   },
   "main": "lib/index.js",
