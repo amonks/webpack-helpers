@@ -97,10 +97,10 @@ export const addGlobal = name => R.assocPath(['externals', name], name)
 export const addExtern = (name, umdName) => R.assocPath(
   ['externals', name],
   {
-    'root': umdName || name,
-    'commonjs2': name,
-    'commonjs': name,
-    'amd': name
+    root: umdName || name,
+    commonjs2: name,
+    commonjs: name,
+    amd: name
   }
 )
 
