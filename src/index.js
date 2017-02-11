@@ -11,6 +11,9 @@ export const base = {
   module: {
     rules: []
   },
+  resolve: {
+    alias: {}
+  },
   externals: {},
   output: {},
   plugins: []
@@ -62,6 +65,12 @@ export const addMinify = R.pipe(
     }
   })
 )
+
+export const addAlias = (from, to) => R.evolve({
+  resolve: {
+    alias: R.assoc(from, to)
+  }
+})
 
 export const addName = (() => {
   const capitalize = str => {
