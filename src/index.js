@@ -1,5 +1,4 @@
 import R from 'ramda'
-import { resolve } from 'path'
 import makeRule from 'webpack-make-rule'
 import webpack from 'webpack'
 import ProgressBar from 'progress-bar-webpack-plugin'
@@ -106,11 +105,11 @@ export const addExtern = (name, umdName) => R.assocPath(
 
 export const addUMD = R.pipe(
   addOutput('libraryTarget', 'umd'),
-  addOutput('path', resolve(process.cwd(), 'umd'))
 )
 
 export const addCJS2 = R.pipe(
   addOutput('libraryTarget', 'commonjs2'),
-  addOutput('path', resolve(process.cwd(), 'lib'))
 )
+
+export const addOutputPath = addOutput('path')
 

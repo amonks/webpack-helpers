@@ -112,3 +112,30 @@ export const addExternWithUMDName = (v1, v2) => ({
   }
 })
 
+export const addUMD = {
+  fn: fns.addUMD,
+  result: {
+    output: {
+      libraryTarget: 'umd'
+    }
+  }
+}
+
+export const addCJS2 = {
+  fn: fns.addCJS2,
+  result: {
+    output: {
+      libraryTarget: 'commonjs2'
+    }
+  }
+}
+
+export const addOutputPath = v => ({
+  fn: fns.addOutputPath(v),
+  result: {
+    output: {
+      path: v
+    }
+  }
+})
+
